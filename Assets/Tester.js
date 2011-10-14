@@ -1,7 +1,9 @@
 #pragma strict
 
+function Update() {
+    if (Input.GetMouseButtonDown(0)) Screenshot.Capture();
+}
+
 function OnGUI() {
-    if (GUI.Button(Rect(0, 0, Screen.width / 2, 50), "Screenshot")) {
-        Screenshot.Capture();
-    }
+    GUI.Label(Rect(0, 0, Screen.width, Screen.height), "Tap screen to take a screenshot.");
 }
