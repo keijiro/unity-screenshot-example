@@ -8,7 +8,13 @@ import System.Runtime.InteropServices;
 
 static function Capture() {
     Application.CaptureScreenshot("screenshot.png");
+    (new GameObject()).AddComponent.<Screenshot>();
+}
+
+function Start() {
+    yield;
     _ScreenshotWriteToAlbum(Application.persistentDataPath + "/screenshot.png");
+    Destroy(gameObject);
 }
 
 #else
